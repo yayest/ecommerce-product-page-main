@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <meta name="description" content="Frontend Mentor | E-commerce product page">
+    
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | E-commerce product page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="banner">
+      <a href="/" class="logo" aria-label="sneakers"
+        ><img src="./images/logo.svg" alt="Sneakers"
+      /></a>
+
+      <dialog class="navigation-dialog" id="navigation" popover>
+        <button
+          class="navigation-button-hide"
+          type="button"
+          popovertarget="navigation"
+          popovertargetaction="hide"
+          aria-label="Hide navigation"
+        >
+          <img src="./images/icon-close.svg" alt="" />
+        </button>
+        <nav>
+          <ul>
+            <li><a href="#Collections">Collections</a></li>
+            <li><a href="#Men">Men</a></li>
+            <li><a href="#Women">Women</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Contact">Contact</a></li>
+          </ul>
+        </nav>
+      </dialog>
+
+      <button
+        class="navigation-button-show"
+        type="button"
+        popovertarget="navigation"
+        aria-label="Show navigation"
+      >
+        <img src="./images/icon-menu.svg" alt="" />
+      </button>
+
+      <button
+        class="cart"
+        id="status"
+        data-status=""
+        type="button"
+        popovertarget="cart"
+        aria-label="Show cart"
+      >
+        <svg viewBox="0 0 22 20" width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="currentColor" fill-rule="nonzero"/></svg>
+      </button>
+
+      <dialog
+        role="status"
+        aria-atomic="true"
+        class="cart-dialog"
+        id="cart"
+        popover
+      >
+        <p>Cart</p>
+        <div class="goods" id="goods">
+          <p>Your cart is empty.</p>
+          
+          <a href="/" class="checkout">Checkout</a>
+        </div>
+      </dialog>
+
+      <button type="button" class="profile" aria-label="Profile">
+        <img src="./images/image-avatar.png" alt="" />
+      </button>
+    </header>
+
+    <section class="gallery" aria-label="Product gallery">
+      <div class="view" popovertarget="gallery"><img id="currentView" src="./images/image-product-1.jpg" alt="" /></div>
+      <div class="navigation">
+        <button type="button" rel="prev">
+          <img src="./images/icon-previous.svg" alt="" />
+        </button>
+        <button type="button" rel="next">
+          <img src="./images/icon-next.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="thumbnails" role="img">
+        <img tabindex="0" class="current"
+          src="./images/image-product-1-thumbnail.jpg"
+          alt=""
+          data-srcset="./images/image-product-1.jpg"
+          role="button"
+        />
+        <img tabindex="0"
+          src="./images/image-product-2-thumbnail.jpg"
+          alt=""
+          data-srcset="./images/image-product-2.jpg"
+          role="button"
+        />
+        <img tabindex="0"
+          src="./images/image-product-3-thumbnail.jpg"
+          alt=""
+          data-srcset="./images/image-product-3.jpg"
+          role="button"
+        />
+        <img tabindex="0"
+          src="./images/image-product-4-thumbnail.jpg"
+          alt=""
+          data-srcset="./images/image-product-4.jpg"
+          role="button"
+        />
+      </div>
+    </section>
+
+    <main class="main">
+      <p class="brand">Sneaker Company</p>
+      <h1>Fall Limited Edition Sneakers</h1>
+      <p>
+        These low-profile sneakers are your perfect casual wear companion.
+        Featuring a durable rubber outer sole, they’ll withstand everything the
+        weather can offer.
+      </p>
+      <div class="sale">
+        <p>
+          <span class="price">$125.00</span><span class="discount">50%</span>
+        </p>
+        <p><del class="price old">$250.00</del></p>
+      </div>
+      <div class="add-to-cart">
+        <div class="quantity">
+          <button type="button" rel="minus" aria-label="quantity minus">
+            <img src="./images/icon-minus.svg" alt="" />
+          </button>
+          <span id="quantity">0</span>
+          <button type="button" rel="plus" aria-label="quantity plus">
+            <img src="./images/icon-plus.svg" alt="" />
+          </button>
+        </div>
+        <button type="button" class="action" id="add" data-id="123456789">
+          <svg viewBox="0 0 22 20" width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="currentColor" fill-rule="nonzero"/></svg>Add to cart
+        </button>
+      </div>
+    </main>
+
+    <footer class="contentinfo">
+      <p>Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/yayest">yayest</a>.</p>
+    </footer>
+
+    <template id="item">
+      <div class="item" data-id="">
+        <img src="./images/image-product-1-thumbnail.jpg" alt="">
+        <p class="name">Fall Limited Edition Sneakers</p>
+        <p class="sale"><span class="price"></span><span class="number"></span><span class="total"></span></p>
+        <button type="button" aria-label="delete item"><img src="./images/icon-delete.svg" alt=""></button>
+      </div>
+    </template>
+
+    <dialog id="gallery" popover="manual">
+      <button class="close" type="button" popovertarget="gallery" popovertargetaction="hide"><img src="./images/icon-close.svg" alt=""></button>
+    </dialog>
+    <script src="./main.js"></script>
+  </body>
+</html>
